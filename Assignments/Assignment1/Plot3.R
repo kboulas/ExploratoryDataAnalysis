@@ -33,6 +33,8 @@ analysisData$Sub_metering_3 <- as.numeric(analysisData$Sub_metering_3)
 ## Plot first data series
 plot(analysisData$Sub_metering_1 ~ analysisData$DateTime, type="l", xlab="", ylab="Global Active Power (in Kilowatts)", yaxt="n")
 axis(2, at=seq(0,39,10), labels=TRUE)
+lines(analysisData$Sub_metering_2 ~ analysisData$DateTime, col = "red")
+lines(analysisData$Sub_metering_3 ~ analysisData$DateTime, col = "blue")
 
 ## Copy the plot to a png file
 dev.copy(png, file="Plot3.png")
